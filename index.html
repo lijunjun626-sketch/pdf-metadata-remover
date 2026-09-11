@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PDF Metadata Remover — Remove PDF Metadata Online Free</title>
+  <meta name="description" content="Remove PDF metadata locally in your browser. View, clean and download PDFs without uploading or signing up." />
+  <link rel="canonical" href="https://pdfmetadataremover.com/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#f6f8fc" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pdfmetadataremover.com/" />
+  <meta property="og:title" content="PDF Metadata Remover — Remove PDF Metadata Online Free" />
+  <meta property="og:description" content="Remove PDF metadata privately in your browser. No upload, account or ads." />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"PDF Metadata Remover",
+    "url":"https://pdfmetadataremover.com/",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "description":"Remove common PDF metadata locally in your browser without uploading files or creating an account.",
+    "featureList":["View PDF metadata","Remove common PDF metadata","Process multiple PDF files locally"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Does this tool upload my PDF?","acceptedAnswer":{"@type":"Answer","text":"No. Processing happens on your device. The PDF bytes are not sent to our server."}},
+      {"@type":"Question","name":"Which metadata fields are removed?","acceptedAnswer":{"@type":"Answer","text":"The tool removes common PDF document information such as title, author, subject, keywords, creator, producer and standard date fields."}},
+      {"@type":"Question","name":"Can I clean multiple PDFs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Select or drag multiple PDF files, clean them together, then download each cleaned copy."}},
+      {"@type":"Question","name":"Does it work on Mac, Windows and mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool runs in modern browsers on desktop and mobile devices, including Safari, Chrome, Edge and Firefox."}}
+    ]
+  }
+  </script>
+  <style>
+    :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; color: #172033; background: #f6f8fc; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 960px; margin: 0 auto; padding: 56px 20px 80px; }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-bottom: 56px; }
+    .brand { color: #172033; font-weight: 800; letter-spacing: -.03em; text-decoration: none; }
+    nav a { color: #52617b; font-size: 14px; text-decoration: none; }
+    nav .links { display: flex; gap: 18px; }
+    h1 { margin: 0 0 10px; font-size: clamp(30px, 5vw, 48px); letter-spacing: -.04em; }
+    .lede { margin: 0 0 28px; color: #5c6880; font-size: 17px; }
+    .privacy { display: inline-flex; gap: 8px; align-items: center; margin: 0 0 28px; color: #176447; background: #e7f7ee; border-radius: 999px; padding: 8px 13px; font-size: 14px; }
+    .card { background: #fff; border: 1px solid #e3e8f2; border-radius: 18px; box-shadow: 0 12px 35px #273d6710; padding: 24px; }
+    .drop { display: block; width: 100%; border: 2px dashed #8ba7f8; border-radius: 14px; padding: 42px 20px; text-align: center; background: #f7f9ff; cursor: pointer; transition: .15s ease; }
+    .drop:hover, .drop.is-over { background: #eef3ff; border-color: #4876ee; }
+    .drop strong { display: block; font-size: 18px; margin-bottom: 8px; }
+    .drop span { color: #6c7890; font-size: 14px; }
+    input[type=file] { display: none; }
+    .files { display: grid; gap: 12px; margin-top: 22px; }
+    .file { border: 1px solid #e3e8f2; border-radius: 12px; padding: 16px; }
+    .file-head { display: flex; justify-content: space-between; gap: 15px; align-items: center; }
+    .file-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 650; }
+    .file-size { color: #77839a; font-size: 13px; white-space: nowrap; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+    th, td { padding: 9px 0; border-bottom: 1px solid #edf0f5; text-align: left; vertical-align: top; }
+    th { color: #718097; font-weight: 550; width: 34%; }
+    td { word-break: break-word; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    button { border: 0; border-radius: 10px; padding: 12px 17px; font: inherit; font-weight: 650; cursor: pointer; }
+    .primary { color: #fff; background: #3568e8; }
+    .actions a { display: inline-block; text-decoration: none; }
+    .secondary { color: #29447f; background: #edf2ff; }
+    .batch { color: #fff; background: #172e70; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .status { margin-top: 16px; color: #5c6880; font-size: 14px; min-height: 20px; }
+    .selection-summary { margin: 14px 0 0; color: #52617b; font-size: 14px; line-height: 1.5; }
+    .empty { color: #77839a; text-align: center; padding: 18px 0; }
+    footer { margin-top: 22px; color: #7a869b; font-size: 13px; text-align: center; }
+    .content { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }
+    .content .card { padding: 22px; }
+    .content h2 { margin: 0 0 10px; font-size: 20px; }
+    .content p { margin: 0; color: #5c6880; line-height: 1.65; font-size: 14px; }
+    .faq { margin-top: 22px; }
+    details { border-top: 1px solid #edf0f5; padding: 14px 0; }
+    details:first-of-type { border-top: 0; }
+    summary { cursor: pointer; font-weight: 650; }
+    @media (max-width: 640px) { main { padding-top: 28px; } nav { margin-bottom: 36px; } .content { grid-template-columns: 1fr; } nav .links { gap: 11px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation"><a class="brand" href="/">PDF Metadata Remover</a><div class="links"><a href="#how-it-works">How it works</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a></div></nav>
+    <h1>PDF Metadata Remover</h1>
+    <p class="lede">View, remove and download a clean PDF in one click.</p>
+    <div class="privacy">✓ Files stay in your browser — nothing is uploaded</div>
+
+    <section class="card">
+      <label class="drop" id="dropzone" for="file-input">
+        <strong>Drop PDF files here or choose files</strong>
+        <span>Supports multiple files · Your files never leave this device</span>
+        <input id="file-input" type="file" accept="application/pdf,.pdf" multiple />
+      </label>
+      <p class="selection-summary" id="selection-summary">Batch mode is ready — choose one PDF or several PDFs to clean together.</p>
+      <div class="files" id="files"><div class="empty">No files selected yet.</div></div>
+      <div class="actions">
+        <button class="primary" id="clean-all" disabled>Clean PDFs</button>
+        <button class="batch" id="download-all" disabled>Download all as ZIP</button>
+        <button class="secondary" id="clear-all" disabled>Clear all</button>
+      </div>
+      <div class="status" id="status" role="status"></div>
+    </section>
+    <section class="content" id="how-it-works">
+      <article class="card"><h2>What is PDF metadata?</h2><p>PDF metadata can include an author name, title, software, creation date and other document details. Removing it helps reduce accidental information disclosure before you share a file.</p></article>
+      <article class="card"><h2>Private PDF cleaning</h2><p>Files are processed locally in your browser with no account, upload or server-side storage. Your original PDF is never changed.</p></article>
+    </section>
+    <section class="content">
+      <article class="card"><h2>What PDF metadata can reveal</h2><p>PDF files often contain more information than the visible page content. Document properties may include the author name, title, subject, keywords, creator application, producer, creation date and modification date. Some PDFs can also contain embedded XML metadata or references to other document data. When a file is shared outside your organization, these details can reveal how and when it was created, which software was used, or who prepared it.</p><p>Our PDF metadata remover helps you inspect common document properties before sharing. The metadata table appears in your browser so you can review what is present before creating a cleaned copy.</p></article>
+      <article class="card"><h2>Why remove metadata from a PDF?</h2><p>Removing metadata is useful when publishing a resume, proposal, legal document, report, invoice or research file. A document may be perfectly safe to read while still exposing an author name, internal project title or editing history. Cleaning metadata is a simple privacy step before uploading a file to a public website, sending it to a client or sharing it with a wider team.</p><p>Always review the visible document itself as well. Metadata removal does not redact text, images, annotations, signatures or hidden content inside the PDF pages.</p></article>
+      <article class="card"><h2>How the cleaner works</h2><p>Choose one or more PDF files, inspect the detected properties, and click <strong>Clean PDFs</strong>. The browser creates a new PDF copy and removes standard document-information fields and the document metadata stream reference. Your original file remains unchanged. When processing finishes, use the individual download button shown below each file.</p><p>Because processing is local, the tool is suitable for quick one-off cleaning on desktop or mobile without registration. Very large, encrypted or unusual PDFs may require a desktop PDF editor if the file cannot be opened in the browser.</p></article>
+      <article class="card"><h2>Free online PDF metadata removal</h2><p>PDF Metadata Remover is free to use and does not require an account. There are no upload queues, forced sign-ups or advertising interruptions. The service is designed for a focused task: view common PDF metadata, remove it locally, and download a fresh copy. If you need to edit page text, redact visible information or change the PDF layout, use a dedicated PDF editor in addition to this tool.</p></article>
+    </section>
+    <section class="card faq"><h2>Frequently asked questions</h2><details><summary>Does this tool upload my PDF?</summary><p>No. Processing happens on your device. The PDF bytes are not sent to our server.</p></details><details><summary>Which metadata fields are removed?</summary><p>The tool removes common PDF document information such as title, author, subject, keywords, creator, producer and standard date fields.</p></details><details><summary>Can I clean multiple PDFs?</summary><p>Yes. Select or drag multiple PDF files, clean them together, then download each cleaned copy.</p></details><details><summary>Does it work on Mac, Windows and mobile?</summary><p>Yes. The tool runs in modern browsers on desktop and mobile devices, including Safari, Chrome, Edge and Firefox.</p></details></section>
+    <footer>Private by design · No account · No ads · <a href="/privacy.html">Privacy</a> · <a href="/about.html">About</a></footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script>
+    const state = { files: [] };
+    const input = document.querySelector('#file-input');
+    const dropzone = document.querySelector('#dropzone');
+    const list = document.querySelector('#files');
+    const status = document.querySelector('#status');
+    const selectionSummary = document.querySelector('#selection-summary');
+    const cleanAll = document.querySelector('#clean-all');
+    const downloadAll = document.querySelector('#download-all');
+    const clearAll = document.querySelector('#clear-all');
+
+    const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const size = (bytes) => bytes < 1024 * 1024 ? `${(bytes / 1024).toFixed(1)} KB` : `${(bytes / 1024 / 1024).toFixed(2)} MB`;
+    const fmtDate = (value) => {
+      if (!(value instanceof Date) || Number.isNaN(value.valueOf()) || value.getTime() <= 0) return '—';
+      return value.toLocaleString();
+    };
+
+    async function inspect(file) {
+      const bytes = await file.arrayBuffer();
+      const pdf = await PDFLib.PDFDocument.load(bytes, { updateMetadata: false });
+      return { file, bytes, metadata: {
+        Title: pdf.getTitle(), Author: pdf.getAuthor(), Subject: pdf.getSubject(),
+        Keywords: pdf.getKeywords(), Creator: pdf.getCreator(), Producer: pdf.getProducer(),
+        'Creation date': fmtDate(pdf.getCreationDate()), 'Modification date': fmtDate(pdf.getModificationDate()),
+        Pages: pdf.getPageCount()
+      }};
+    }
+
+    async function addFiles(files) {
+      const pdfs = [...files].filter((file) => file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf'));
+      if (!pdfs.length) { status.textContent = 'Please choose PDF files.'; return; }
+      status.textContent = 'Reading metadata locally…';
+      for (const file of pdfs) {
+        try { state.files.push(await inspect(file)); } catch { status.textContent = `Could not read ${file.name}. It may be encrypted or invalid.`; }
+      }
+      render();
+      status.textContent = `${state.files.length} file${state.files.length === 1 ? '' : 's'} ready.`;
+    }
+
+    function render() {
+      cleanAll.disabled = !state.files.length;
+      clearAll.disabled = !state.files.length;
+      const readyCount = state.files.filter((item) => item.cleanedUrl).length;
+      downloadAll.disabled = !readyCount;
+      selectionSummary.textContent = !state.files.length
+        ? 'Batch mode is ready — choose one PDF or several PDFs to clean together.'
+        : `${state.files.length} PDF${state.files.length === 1 ? '' : 's'} selected. Clean them together, then download every cleaned copy in one ZIP.`;
+      if (!state.files.length) { list.innerHTML = '<div class="empty">No files selected yet.</div>'; return; }
+      list.innerHTML = state.files.map((item, index) => `<article class="file"><div class="file-head"><div class="file-name">${esc(item.file.name)}</div><div class="file-size">${size(item.file.size)} · ${item.metadata.Pages} pages</div></div><table>${Object.entries(item.metadata).filter(([key]) => key !== 'Pages').map(([key, value]) => `<tr><th>${esc(key)}</th><td>${esc(value || '—')}</td></tr>`).join('')}</table><div class="actions">${item.cleanedUrl ? `<a class="primary download-one" href="${item.cleanedUrl}" download="${esc(item.cleanedName)}">Download cleaned PDF</a>` : ''}<button class="secondary remove-one" data-index="${index}">Remove file</button></div></article>`).join('');
+      document.querySelectorAll('.remove-one').forEach((button) => button.addEventListener('click', () => {
+        const index = Number(button.dataset.index);
+        if (state.files[index]?.cleanedUrl) URL.revokeObjectURL(state.files[index].cleanedUrl);
+        state.files.splice(index, 1);
+        render();
+      }));
+    }
+
+    async function clean(item) {
+      const pdf = await PDFLib.PDFDocument.load(item.bytes, { updateMetadata: false });
+      // Remove standard document-info keys instead of replacing dates with
+      // a sentinel value such as 1970-01-01.
+      try {
+        const infoRef = pdf.context.trailerInfo.Info;
+        if (infoRef) {
+          const info = pdf.context.lookup(infoRef);
+          ['Title', 'Author', 'Subject', 'Keywords', 'Creator', 'Producer', 'CreationDate', 'ModDate']
+            .forEach((key) => info.delete(PDFLib.PDFName.of(key)));
+        }
+        const rootRef = pdf.context.trailerInfo.Root;
+        const root = rootRef && pdf.context.lookup(rootRef);
+        if (root) root.delete(PDFLib.PDFName.of('Metadata'));
+      } catch (error) {
+        status.textContent = 'Some embedded metadata could not be removed from this PDF.';
+      }
+      const output = await pdf.save({ useObjectStreams: false });
+      const cleanedName = item.file.name.replace(/\.pdf$/i, '') + '-cleaned.pdf';
+      return { url: URL.createObjectURL(new Blob([output], { type: 'application/pdf' })), cleanedName };
+    }
+
+    input.addEventListener('change', () => addFiles(input.files));
+    ['dragenter', 'dragover'].forEach((event) => dropzone.addEventListener(event, (e) => { e.preventDefault(); dropzone.classList.add('is-over'); }));
+    ['dragleave', 'drop'].forEach((event) => dropzone.addEventListener(event, (e) => { e.preventDefault(); dropzone.classList.remove('is-over'); }));
+    dropzone.addEventListener('drop', (e) => addFiles(e.dataTransfer.files));
+    cleanAll.addEventListener('click', async () => {
+      status.textContent = 'Creating cleaned copies locally…';
+      let completed = 0;
+      for (const item of state.files) {
+        try {
+          if (item.cleanedUrl) URL.revokeObjectURL(item.cleanedUrl);
+          const cleaned = await clean(item);
+          item.cleanedUrl = cleaned.url;
+          item.cleanedName = cleaned.cleanedName;
+          completed += 1;
+        } catch {
+          status.textContent = `Could not clean ${item.file.name}. You can still download any files that finished.`;
+        }
+      }
+      render();
+      status.textContent = completed === state.files.length
+        ? 'Cleaned copies are ready. Download each file below or use the ZIP button.'
+        : `${completed} of ${state.files.length} PDF${state.files.length === 1 ? '' : 's'} cleaned. You can download the completed files below.`;
+    });
+    downloadAll.addEventListener('click', async () => {
+      const ready = state.files.filter((item) => item.cleanedUrl);
+      if (!ready.length || !window.JSZip) { status.textContent = 'Please clean at least one PDF first.'; return; }
+      downloadAll.disabled = true;
+      status.textContent = 'Preparing ZIP locally…';
+      try {
+        const zip = new JSZip();
+        for (const item of ready) {
+          const response = await fetch(item.cleanedUrl);
+          zip.file(item.cleanedName, await response.blob());
+        }
+        const blob = await zip.generateAsync({ type: 'blob' });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = 'cleaned-pdfs.zip';
+        anchor.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        status.textContent = `${ready.length} cleaned PDF${ready.length === 1 ? '' : 's'} downloaded as a ZIP.`;
+      } catch {
+        status.textContent = 'Could not create the ZIP in this browser. Download the files individually instead.';
+      } finally {
+        downloadAll.disabled = false;
+      }
+    });
+    clearAll.addEventListener('click', () => {
+      state.files.forEach((item) => { if (item.cleanedUrl) URL.revokeObjectURL(item.cleanedUrl); });
+      state.files.length = 0;
+      input.value = '';
+      render();
+      status.textContent = '';
+    });
+  </script>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"c0083773c4aa483e82313cb7a648a5cf"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
