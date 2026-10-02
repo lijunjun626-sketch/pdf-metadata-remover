@@ -1,8 +1,18 @@
 # PDF Metadata Remover
 
-Production site: https://pdfmetadataremover.com/
+[Open PDF Metadata Remover](https://pdfmetadataremover.com/)
+
+![PDF Metadata Remover social preview](./og-image.png)
 
 A free, browser-local tool for viewing and removing common PDF metadata before a file is shared. PDFs are processed in the visitor's browser and are not uploaded by this site.
+
+## Features
+
+- Inspect common PDF document properties before sharing.
+- Remove author, title, subject, keywords, creator, producer and standard date fields when present.
+- Process files locally in the browser without an account or server upload.
+- Download a cleaned copy while leaving the original file unchanged.
+- Use the tool on modern desktop and mobile browsers.
 
 ## Production source of truth
 
