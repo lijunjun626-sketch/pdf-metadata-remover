@@ -30,6 +30,16 @@ Use this file for decisions that a future collaborator or AI needs to understand
 
 **Reason:** It is consistent with the product's privacy promise. Do not add trackers that inspect PDF contents or follow users across sites.
 
+## 2026-10-04 — Extend the domain with a photo metadata tool
+
+**Context:** The existing site covers PDF metadata. Photo EXIF removal is a closely related privacy task that can share the same domain and local-processing promise.
+
+**Decision:** Add `/exif-remover/` as a separate tool page. Support lossless local cleaning for JPEG, PNG and WebP. Do not claim HEIC cleaning until a browser-safe, lossless implementation is verified across devices.
+
+**Reason:** The new page serves a distinct search intent without weakening the homepage's PDF focus. Accurate format claims take priority over a longer feature list.
+
+**Review point:** Check indexing and GSC impressions after two weeks. Consider HEIC only after automated fixtures and real-browser tests pass.
+
 ## 2026-09-11 — GitHub is code memory, not a CRM
 
 **Context:** The project needs durable cross-session context for people and AI.

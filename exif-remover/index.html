@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EXIF Remover – Remove Metadata From Photos Online</title>
+  <meta name="description" content="Remove EXIF, GPS, XMP and IPTC metadata from JPEG, PNG and WebP photos. Files are cleaned locally in your browser and never uploaded." />
+  <link rel="canonical" href="https://pdfmetadataremover.com/exif-remover/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#f6f8fc" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pdfmetadataremover.com/exif-remover/" />
+  <meta property="og:site_name" content="PDF Metadata Remover" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="EXIF Remover – Remove Metadata From Photos Online" />
+  <meta property="og:description" content="Inspect and remove hidden photo metadata locally in your browser. No upload or account." />
+  <meta property="og:image" content="https://pdfmetadataremover.com/exif-remover/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="EXIF Remover showing GPS, camera and timestamp metadata removed locally" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EXIF Remover – Remove Metadata From Photos Online" />
+  <meta name="twitter:description" content="Inspect and remove hidden photo metadata locally in your browser. No upload or account." />
+  <meta name="twitter:image" content="https://pdfmetadataremover.com/exif-remover/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"EXIF Remover",
+    "url":"https://pdfmetadataremover.com/exif-remover/",
+    "applicationCategory":"UtilitiesApplication",
+    "operatingSystem":"Any",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+    "description":"Inspect and remove EXIF, GPS, XMP, IPTC and comment metadata from JPEG, PNG and WebP photos locally in the browser.",
+    "featureList":["View common photo metadata","Remove image metadata without uploading","Lossless JPEG, PNG and WebP cleaning","Verify the cleaned copy"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"PDF Metadata Remover","item":"https://pdfmetadataremover.com/"},
+      {"@type":"ListItem","position":2,"name":"EXIF Remover","item":"https://pdfmetadataremover.com/exif-remover/"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How do I remove EXIF data from a photo?","acceptedAnswer":{"@type":"Answer","text":"Choose a JPEG, PNG or WebP photo, review the metadata detected in your browser, select Remove metadata, and download the verified clean copy."}},
+      {"@type":"Question","name":"Are my photos uploaded to remove their metadata?","acceptedAnswer":{"@type":"Answer","text":"No. Reading, cleaning and verification happen locally in your browser. The selected photo is not sent to this website."}},
+      {"@type":"Question","name":"Does this EXIF remover change image quality?","acceptedAnswer":{"@type":"Answer","text":"The cleaner removes supported metadata blocks from JPEG, PNG and WebP containers without re-encoding the image pixels. It preserves ICC color profiles."}},
+      {"@type":"Question","name":"Can EXIF data be recovered after removal?","acceptedAnswer":{"@type":"Answer","text":"The removed metadata blocks are not present in the downloaded copy. Keep or delete the original separately because this tool never overwrites it."}},
+      {"@type":"Question","name":"Does this tool remove metadata from HEIC photos?","acceptedAnswer":{"@type":"Answer","text":"Not yet. HEIC files can contain EXIF data, but reliable lossless browser-side rewriting is not consistent across devices, so this tool does not claim to clean HEIC files."}},
+      {"@type":"Question","name":"Do social platforms always remove EXIF data?","acceptedAnswer":{"@type":"Answer","text":"No universal guarantee applies. A platform may recompress ordinary photo posts but preserve metadata when a file is sent as a document, original or email attachment. Check the exact sharing method or clean the copy before sending it."}}
+    ]
+  }
+  </script>
+  <style>
+    :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; color: #172033; background: #f6f8fc; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 960px; margin: 0 auto; padding: 56px 20px 80px; }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-bottom: 56px; }
+    .brand { color: #172033; font-weight: 800; letter-spacing: -.03em; text-decoration: none; }
+    nav a { color: #52617b; font-size: 14px; text-decoration: none; }
+    nav .links { display: flex; gap: 18px; }
+    .breadcrumbs { display: flex; flex-wrap: wrap; gap: 8px; margin: -32px 0 24px; color: #718097; font-size: 13px; }
+    .breadcrumbs a { color: #52617b; text-decoration: none; }
+    h1 { margin: 0 0 10px; font-size: clamp(30px, 5vw, 48px); letter-spacing: -.04em; }
+    .lede { margin: 0 0 28px; color: #5c6880; font-size: 17px; line-height: 1.55; }
+    .privacy { display: inline-flex; gap: 8px; align-items: center; margin: 0 0 28px; color: #176447; background: #e7f7ee; border-radius: 999px; padding: 8px 13px; font-size: 14px; }
+    .card { background: #fff; border: 1px solid #e3e8f2; border-radius: 18px; box-shadow: 0 12px 35px #273d6710; padding: 24px; }
+    .drop { display: block; width: 100%; border: 2px dashed #8ba7f8; border-radius: 14px; padding: 42px 20px; text-align: center; background: #f7f9ff; cursor: pointer; transition: .15s ease; }
+    .drop:hover, .drop.is-over { background: #eef3ff; border-color: #4876ee; }
+    .drop strong { display: block; font-size: 18px; margin-bottom: 8px; }
+    .drop span { color: #6c7890; font-size: 14px; }
+    input[type=file] { display: none; }
+    .result { display: none; margin-top: 22px; border: 1px solid #e3e8f2; border-radius: 14px; padding: 18px; }
+    .result.is-visible { display: block; }
+    .file-head { display: flex; justify-content: space-between; gap: 15px; align-items: center; }
+    .file-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
+    .file-size { color: #77839a; font-size: 13px; white-space: nowrap; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+    th, td { padding: 9px 0; border-bottom: 1px solid #edf0f5; text-align: left; vertical-align: top; }
+    th { color: #718097; font-weight: 550; width: 34%; }
+    td { word-break: break-word; }
+    td a { color: #3568e8; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    button, .download { border: 0; border-radius: 10px; padding: 12px 17px; font: inherit; font-weight: 650; cursor: pointer; text-decoration: none; }
+    .primary { color: #fff; background: #3568e8; }
+    .secondary { color: #29447f; background: #edf2ff; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .status { margin-top: 16px; color: #5c6880; font-size: 14px; min-height: 20px; line-height: 1.55; }
+    .verification { margin-top: 16px; padding: 12px 14px; border-radius: 10px; color: #176447; background: #e7f7ee; font-size: 14px; line-height: 1.5; }
+    .verification.warn { color: #7b4b12; background: #fff5dd; }
+    .content { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 22px; }
+    .content .card { padding: 22px; }
+    .content h2, .wide h2, .faq h2 { margin: 0 0 10px; font-size: 20px; }
+    .content h3 { margin: 18px 0 7px; font-size: 16px; }
+    .content p, .wide p, .wide li, details p { color: #5c6880; line-height: 1.65; font-size: 14px; }
+    .content p { margin: 0; }
+    .wide { margin-top: 22px; }
+    .wide table th { width: 25%; }
+    .wide li { margin: 7px 0; }
+    .faq { margin-top: 22px; }
+    details { border-top: 1px solid #edf0f5; padding: 14px 0; }
+    details:first-of-type { border-top: 0; }
+    summary { cursor: pointer; font-weight: 650; }
+    footer { margin-top: 22px; color: #7a869b; font-size: 13px; text-align: center; }
+    @media (max-width: 640px) {
+      main { padding-top: 28px; }
+      nav { margin-bottom: 36px; align-items: flex-start; }
+      nav .links { gap: 11px; flex-wrap: wrap; justify-content: flex-end; }
+      .breadcrumbs { margin-top: -18px; }
+      .content { grid-template-columns: 1fr; }
+      .wide table, .wide tbody, .wide tr, .wide th, .wide td { display: block; width: 100%; }
+      .wide tr { padding: 12px 0; border-bottom: 1px solid #edf0f5; }
+      .wide th, .wide td { padding: 3px 0; border: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation"><a class="brand" href="/">PDF Metadata Remover</a><div class="links"><a href="/">PDF tool</a><a href="/clear-pdf-metadata/">Verify PDFs</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a></div></nav>
+    <div class="breadcrumbs" aria-label="Breadcrumb"><a href="/">PDF Metadata Remover</a><span aria-hidden="true">›</span><span>EXIF Remover</span></div>
+    <h1>EXIF Remover: Remove Metadata From Your Photos</h1>
+    <p class="lede">Inspect hidden GPS, camera, timestamp and software data, then create a clean JPEG, PNG or WebP copy without uploading your photo.</p>
+    <div class="privacy">✓ Your photos never leave your device</div>
+
+    <section class="card" aria-labelledby="tool-heading">
+      <h2 id="tool-heading" style="position:absolute;left:-9999px">Remove photo metadata</h2>
+      <label class="drop" id="dropzone" for="file-input">
+        <strong>Drop a photo here or choose a file</strong>
+        <span>Lossless cleaning for JPEG, PNG and WebP · HEIC cleaning is not supported yet</span>
+        <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.jpg,.jpeg,.png,.webp,.heic,.heif" />
+      </label>
+      <div class="result" id="result">
+        <div class="file-head"><div class="file-name" id="file-name"></div><div class="file-size" id="file-size"></div></div>
+        <table id="metadata-table" aria-label="Detected photo metadata"></table>
+        <div class="verification" id="verification" hidden></div>
+        <div class="actions">
+          <button class="primary" id="clean" disabled>Remove metadata</button>
+          <a class="download secondary" id="download" hidden>Download clean photo</a>
+          <button class="secondary" id="clear">Choose another photo</button>
+        </div>
+      </div>
+      <div class="status" id="status" role="status">Choose a supported image to inspect it locally.</div>
+    </section>
+
+    <section class="content">
+      <article class="card"><h2>What is EXIF data?</h2><p>EXIF is a metadata format used by cameras and phones to store information alongside an image. Depending on the device and app, a photo can contain its capture time, GPS coordinates, camera make and model, lens, orientation, editing software, author or copyright details. These fields are not normally visible when someone looks at the picture.</p></article>
+      <article class="card"><h2>What this cleaner removes</h2><p>For JPEG files, the tool removes EXIF and GPS, XMP, IPTC/Photoshop metadata, comments and supported Content Credentials blocks. For PNG, it removes EXIF, text, time, XMP-related and supported Content Credentials chunks. For WebP, it removes EXIF, XMP and supported Content Credentials chunks. ICC color profiles and encoded image pixels are preserved.</p></article>
+      <article class="card"><h2>Why GPS is sensitive</h2><p>Location tags can reveal where a photo was taken. A picture captured at home, school or work may expose a precise coordinate even when the visible scene looks harmless. This page shows detected latitude and longitude before cleaning. Opening the optional map link sends those coordinates to OpenStreetMap, so use that preview only when appropriate.</p></article>
+      <article class="card"><h2>Timestamps, devices and software</h2><p>Capture times can reveal routines or travel dates. Camera and lens identifiers may connect multiple images to the same device. Software fields can disclose editing tools or workflow details. None of these fields proves identity by itself, but together they can add context that you did not intend to share.</p></article>
+    </section>
+
+    <section class="card wide">
+      <h2>Do sharing platforms remove EXIF metadata?</h2>
+      <p>Many social apps recompress ordinary photo posts and commonly remove some metadata, but there is no safe universal rule. Behavior can change by platform, client version, file type and sharing method.</p>
+      <table>
+        <tr><th>Social photo post</th><td>Often recompressed, which commonly removes EXIF. Verify a downloaded copy if the result matters.</td></tr>
+        <tr><th>Messaging app photo</th><td>Often compressed, but an “original,” “HD,” file or document option may behave differently.</td></tr>
+        <tr><th>Email attachment</th><td>Usually sends the original file unchanged, so metadata may remain.</td></tr>
+        <tr><th>Cloud or file transfer</th><td>Usually preserves the original bytes unless the service explicitly transforms the image.</td></tr>
+      </table>
+      <p>The reliable approach is to clean a copy before sharing and inspect that downloaded copy. Do not depend on a platform to protect information that should not leave your device.</p>
+    </section>
+
+    <section class="content">
+      <article class="card"><h2>Remove location from iPhone photos</h2><p>For future photos, review Camera access under iOS Location Services. When sharing an existing photo, iOS may offer location options in the share sheet, but the exact controls vary by version and workflow. Cleaning a separate copy here removes supported metadata blocks while preserving your original.</p></article>
+      <article class="card"><h2>Remove location from Android photos</h2><p>Camera apps commonly include a setting such as location tags or save location. Turning it off affects future captures, not metadata already stored in older files. Use this tool on an existing JPEG, PNG or WebP copy before sending it outside your trusted contacts.</p></article>
+      <article class="card"><h2>Windows and macOS options</h2><p>Desktop operating systems and photo apps can display or remove selected properties, but the available fields differ by format. This browser tool provides one consistent check for supported metadata containers and verifies the generated copy immediately after cleaning.</p></article>
+      <article class="card"><h2>Private browser processing</h2><p>Your selected file is read through browser APIs. The cleaner edits its local byte array and creates a temporary download URL on this device. There is no upload endpoint, account or cloud processing step. Closing or refreshing the page discards the temporary browser state.</p></article>
+    </section>
+
+    <section class="card wide">
+      <h2>Supported formats and limitations</h2>
+      <ul>
+        <li><strong>JPEG / JPG:</strong> lossless removal of common EXIF, GPS, XMP, IPTC, comment and supported C2PA/JUMBF metadata segments.</li>
+        <li><strong>PNG:</strong> lossless removal of EXIF and metadata text/time chunks while preserving image data and color profile chunks.</li>
+        <li><strong>WebP:</strong> lossless removal of EXIF, XMP and supported C2PA chunks while preserving image, alpha and animation data.</li>
+        <li><strong>HEIC / HEIF:</strong> not cleaned in this version. The page rejects it clearly instead of returning an unchanged file as “clean.”</li>
+      </ul>
+      <p>Removing photo metadata is not visual redaction. It does not blur faces, remove visible text or erase information shown inside the image itself. Keep the original until you have opened and checked the cleaned download.</p>
+    </section>
+
+    <section class="card faq">
+      <h2>Frequently asked questions</h2>
+      <details><summary>How do I remove EXIF data from a photo?</summary><p>Choose a JPEG, PNG or WebP photo, review the fields and metadata blocks detected in your browser, select <strong>Remove metadata</strong>, and download the verified clean copy.</p></details>
+      <details><summary>Are my photos uploaded to remove their metadata?</summary><p>No. Reading, cleaning and verification happen locally in your browser. The selected photo is not sent to this website.</p></details>
+      <details><summary>Does this EXIF remover change image quality?</summary><p>The cleaner removes supported metadata blocks from JPEG, PNG and WebP containers without re-encoding the image pixels. It also preserves ICC color profiles.</p></details>
+      <details><summary>Can EXIF data be recovered after removal?</summary><p>The removed metadata blocks are not present in the downloaded copy. Keep or delete the original separately because this tool never overwrites it.</p></details>
+      <details><summary>Does this tool remove metadata from HEIC photos?</summary><p>Not yet. HEIC files can contain EXIF data, but reliable lossless browser-side rewriting is not consistent across devices, so this tool does not claim to clean HEIC files.</p></details>
+      <details><summary>Do social platforms always remove EXIF data?</summary><p>No universal guarantee applies. A platform may recompress ordinary photo posts but preserve metadata when a file is sent as a document, original or email attachment. Check the exact sharing method or clean the copy before sending it.</p></details>
+    </section>
+    <footer>Clean photos locally · <a href="/">Remove PDF metadata</a> · <a href="/clear-pdf-metadata/">Verify a cleaned PDF</a> · <a href="/privacy.html">Privacy</a></footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.umd.js"></script>
+  <script src="/assets/image-metadata-tools.js"></script>
+  <script>
+    const state = { file: null, bytes: null, format: null, objectUrl: null };
+    const input = document.querySelector('#file-input');
+    const dropzone = document.querySelector('#dropzone');
+    const result = document.querySelector('#result');
+    const fileName = document.querySelector('#file-name');
+    const fileSize = document.querySelector('#file-size');
+    const table = document.querySelector('#metadata-table');
+    const status = document.querySelector('#status');
+    const verification = document.querySelector('#verification');
+    const cleanButton = document.querySelector('#clean');
+    const download = document.querySelector('#download');
+    const clearButton = document.querySelector('#clear');
+
+    const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (character) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+    const formatBytes = (bytes) => bytes < 1024 * 1024 ? `${(bytes / 1024).toFixed(1)} KB` : `${(bytes / 1024 / 1024).toFixed(2)} MB`;
+    const first = (metadata, names) => names.map((name) => metadata?.[name]).find((value) => value !== undefined && value !== null && value !== '');
+    const displayValue = (value) => value instanceof Date ? value.toLocaleString() : Array.isArray(value) ? value.join(', ') : value;
+
+    function revokeDownload() {
+      if (state.objectUrl) URL.revokeObjectURL(state.objectUrl);
+      state.objectUrl = null;
+      download.hidden = true;
+      download.removeAttribute('href');
+    }
+
+    function reset() {
+      revokeDownload();
+      state.file = null;
+      state.bytes = null;
+      state.format = null;
+      input.value = '';
+      result.classList.remove('is-visible');
+      verification.hidden = true;
+      verification.className = 'verification';
+      cleanButton.disabled = true;
+      status.textContent = 'Choose a supported image to inspect it locally.';
+    }
+
+    function metadataRows(metadata, blocks) {
+      const latitude = first(metadata, ['latitude', 'GPSLatitude']);
+      const longitude = first(metadata, ['longitude', 'GPSLongitude']);
+      const rows = [
+        ['GPS location', Number.isFinite(latitude) && Number.isFinite(longitude)
+          ? `<a href="https://www.openstreetmap.org/?mlat=${encodeURIComponent(latitude)}&mlon=${encodeURIComponent(longitude)}#map=15/${encodeURIComponent(latitude)}/${encodeURIComponent(longitude)}" target="_blank" rel="noopener noreferrer">${esc(latitude.toFixed(6))}, ${esc(longitude.toFixed(6))} · open map</a>`
+          : '—'],
+        ['Captured', esc(displayValue(first(metadata, ['DateTimeOriginal', 'CreateDate', 'DateTime', 'ModifyDate'])) || '—')],
+        ['Camera', esc([first(metadata, ['Make']), first(metadata, ['Model'])].filter(Boolean).join(' ') || '—')],
+        ['Lens', esc(displayValue(first(metadata, ['LensModel', 'Lens', 'LensInfo'])) || '—')],
+        ['Software', esc(displayValue(first(metadata, ['Software', 'CreatorTool'])) || '—')],
+        ['Author / artist', esc(displayValue(first(metadata, ['Artist', 'Author', 'Creator'])) || '—')],
+        ['Copyright', esc(displayValue(first(metadata, ['Copyright', 'Rights'])) || '—')],
+        ['Metadata blocks', esc(blocks.length ? `${blocks.length}: ${blocks.join(', ')}` : 'None detected by the container scan')],
+      ];
+      return rows.map(([label, value]) => `<tr><th>${esc(label)}</th><td>${value}</td></tr>`).join('');
+    }
+
+    async function inspectFile(file) {
+      reset();
+      status.textContent = 'Reading metadata locally…';
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      const format = ImageMetadataTools.sniffFormat(bytes);
+      state.file = file;
+      state.bytes = bytes;
+      state.format = format;
+      result.classList.add('is-visible');
+      fileName.textContent = file.name;
+      fileSize.textContent = `${format.toUpperCase()} · ${formatBytes(file.size)}`;
+
+      let metadata = {};
+      try { metadata = await exifr.parse(file, { ifd0: true, exif: true, gps: true, xmp: true, iptc: true, jfif: true, ihdr: true }) || {}; }
+      catch (error) { metadata = {}; }
+
+      if (format === 'heic') {
+        table.innerHTML = metadataRows(metadata, []);
+        status.textContent = 'HEIC metadata may be readable, but this version does not clean HEIC files. Convert a copy to JPEG first if you need browser-based cleaning.';
+        cleanButton.disabled = true;
+        return;
+      }
+
+      try {
+        const blocks = ImageMetadataTools.listMetadata(bytes);
+        table.innerHTML = metadataRows(metadata, blocks);
+        cleanButton.disabled = false;
+        status.textContent = blocks.length
+          ? `${blocks.length} removable metadata block${blocks.length === 1 ? '' : 's'} detected. Review the fields, then create a clean copy.`
+          : 'No supported metadata blocks were detected. You can still create a verified copy.';
+      } catch (error) {
+        table.innerHTML = metadataRows(metadata, []);
+        cleanButton.disabled = true;
+        status.textContent = error.message;
+      }
+    }
+
+    function outputName(fileName, format) {
+      const extension = format === 'jpeg' ? 'jpg' : format;
+      return `${fileName.replace(/\.[^.]+$/, '')}-metadata-removed.${extension}`;
+    }
+
+    cleanButton.addEventListener('click', () => {
+      try {
+        revokeDownload();
+        status.textContent = 'Removing metadata and checking the cleaned copy…';
+        const cleaned = ImageMetadataTools.stripMetadata(state.bytes);
+        const remaining = ImageMetadataTools.listMetadata(cleaned.bytes);
+        const mime = cleaned.format === 'jpeg' ? 'image/jpeg' : `image/${cleaned.format}`;
+        state.objectUrl = URL.createObjectURL(new Blob([cleaned.bytes], { type: mime }));
+        download.href = state.objectUrl;
+        download.download = outputName(state.file.name, cleaned.format);
+        download.hidden = false;
+        verification.hidden = false;
+        verification.className = `verification${remaining.length ? ' warn' : ''}`;
+        verification.innerHTML = remaining.length
+          ? `<strong>Check incomplete:</strong> ${remaining.length} supported metadata block${remaining.length === 1 ? '' : 's'} remain. Do not share this copy yet.`
+          : `<strong>Verified locally:</strong> ${cleaned.removed.length} supported metadata block${cleaned.removed.length === 1 ? '' : 's'} removed; 0 remain in the cleaned copy. Image pixels were not re-encoded.`;
+        status.textContent = remaining.length ? 'The cleaned copy needs another review.' : 'Clean copy ready to download.';
+      } catch (error) {
+        status.textContent = error.message;
+      }
+    });
+
+    input.addEventListener('change', () => input.files[0] && inspectFile(input.files[0]));
+    ['dragenter', 'dragover'].forEach((event) => dropzone.addEventListener(event, (e) => { e.preventDefault(); dropzone.classList.add('is-over'); }));
+    ['dragleave', 'drop'].forEach((event) => dropzone.addEventListener(event, (e) => { e.preventDefault(); dropzone.classList.remove('is-over'); }));
+    dropzone.addEventListener('drop', (e) => e.dataTransfer.files[0] && inspectFile(e.dataTransfer.files[0]));
+    clearButton.addEventListener('click', reset);
+  </script>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"c0083773c4aa483e82313cb7a648a5cf"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>
