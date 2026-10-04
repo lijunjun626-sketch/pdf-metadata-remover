@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EXIF Remover – Remove Metadata From Photos Online</title>
-  <meta name="description" content="Remove EXIF, GPS, XMP and IPTC metadata from JPEG, PNG and WebP photos. Files are cleaned locally in your browser and never uploaded." />
+  <meta name="description" content="EXIF Remover for JPEG, PNG and WebP photos. Remove GPS, camera, timestamp, XMP and IPTC metadata locally—your files are never uploaded." />
   <link rel="canonical" href="https://pdfmetadataremover.com/exif-remover/" />
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/pdf-metadata-remover-icon-128.png" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#f6f8fc" />
   <meta property="og:type" content="website" />
@@ -112,6 +113,7 @@
     details:first-of-type { border-top: 0; }
     summary { cursor: pointer; font-weight: 650; }
     footer { margin-top: 22px; color: #7a869b; font-size: 13px; text-align: center; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     @media (max-width: 640px) {
       main { padding-top: 28px; }
       nav { margin-bottom: 36px; align-items: flex-start; }
@@ -133,7 +135,7 @@
     <div class="privacy">✓ Your photos never leave your device</div>
 
     <section class="card" aria-labelledby="tool-heading">
-      <h2 id="tool-heading" style="position:absolute;left:-9999px">Remove photo metadata</h2>
+      <h2 id="tool-heading" class="sr-only">Remove photo metadata</h2>
       <label class="drop" id="dropzone" for="file-input">
         <strong>Drop a photo here or choose a file</strong>
         <span>Lossless cleaning for JPEG, PNG and WebP · HEIC cleaning is not supported yet</span>
@@ -154,7 +156,7 @@
 
     <section class="content">
       <article class="card"><h2>What is EXIF data?</h2><p>EXIF is a metadata format used by cameras and phones to store information alongside an image. Depending on the device and app, a photo can contain its capture time, GPS coordinates, camera make and model, lens, orientation, editing software, author or copyright details. These fields are not normally visible when someone looks at the picture.</p></article>
-      <article class="card"><h2>What this cleaner removes</h2><p>For JPEG files, the tool removes EXIF and GPS, XMP, IPTC/Photoshop metadata, comments and supported Content Credentials blocks. For PNG, it removes EXIF, text, time, XMP-related and supported Content Credentials chunks. For WebP, it removes EXIF, XMP and supported Content Credentials chunks. ICC color profiles and encoded image pixels are preserved.</p></article>
+      <article class="card"><h2>What this EXIF data remover clears</h2><p>Use this EXIF data remover to remove EXIF data and related metadata without re-encoding the picture. For JPEG files, it removes EXIF and GPS, XMP, IPTC/Photoshop metadata, comments and supported Content Credentials blocks. For PNG, it removes EXIF, text, time, XMP-related and supported Content Credentials chunks. For WebP, it removes EXIF, XMP and supported Content Credentials chunks. ICC color profiles and encoded image pixels are preserved.</p></article>
       <article class="card"><h2>Why GPS is sensitive</h2><p>Location tags can reveal where a photo was taken. A picture captured at home, school or work may expose a precise coordinate even when the visible scene looks harmless. This page shows detected latitude and longitude before cleaning. Opening the optional map link sends those coordinates to OpenStreetMap, so use that preview only when appropriate.</p></article>
       <article class="card"><h2>Timestamps, devices and software</h2><p>Capture times can reveal routines or travel dates. Camera and lens identifiers may connect multiple images to the same device. Software fields can disclose editing tools or workflow details. None of these fields proves identity by itself, but together they can add context that you did not intend to share.</p></article>
     </section>
@@ -163,8 +165,9 @@
       <h2>Do sharing platforms remove EXIF metadata?</h2>
       <p>Many social apps recompress ordinary photo posts and commonly remove some metadata, but there is no safe universal rule. Behavior can change by platform, client version, file type and sharing method.</p>
       <table>
-        <tr><th>Social photo post</th><td>Often recompressed, which commonly removes EXIF. Verify a downloaded copy if the result matters.</td></tr>
-        <tr><th>Messaging app photo</th><td>Often compressed, but an “original,” “HD,” file or document option may behave differently.</td></tr>
+        <tr><th>Discord</th><td>Ordinary image uploads may be processed or displayed through different versions, while files shared through other methods may behave differently. Do not assume every Discord workflow removes EXIF; inspect a downloaded copy.</td></tr>
+        <tr><th>WhatsApp</th><td>Photos are often recompressed, but sending an image as a document or through another original-file workflow may preserve more of the source file. Clean first if metadata matters.</td></tr>
+        <tr><th>Instagram</th><td>Standard photo posts are normally processed for display, but platform behavior can change. Treat removal as unverified unless you inspect the exact downloaded result.</td></tr>
         <tr><th>Email attachment</th><td>Usually sends the original file unchanged, so metadata may remain.</td></tr>
         <tr><th>Cloud or file transfer</th><td>Usually preserves the original bytes unless the service explicitly transforms the image.</td></tr>
       </table>
@@ -176,6 +179,8 @@
       <article class="card"><h2>Remove location from Android photos</h2><p>Camera apps commonly include a setting such as location tags or save location. Turning it off affects future captures, not metadata already stored in older files. Use this tool on an existing JPEG, PNG or WebP copy before sending it outside your trusted contacts.</p></article>
       <article class="card"><h2>Windows and macOS options</h2><p>Desktop operating systems and photo apps can display or remove selected properties, but the available fields differ by format. This browser tool provides one consistent check for supported metadata containers and verifies the generated copy immediately after cleaning.</p></article>
       <article class="card"><h2>Private browser processing</h2><p>Your selected file is read through browser APIs. The cleaner edits its local byte array and creates a temporary download URL on this device. There is no upload endpoint, account or cloud processing step. Closing or refreshing the page discards the temporary browser state.</p></article>
+      <article class="card"><h2>Remove metadata from a photo before sharing</h2><p>Removing metadata from a photo is most reliable when you clean a separate copy before it enters email, chat, social media or cloud storage. The downloaded copy is rescanned in your browser so the result reflects the file you will actually share. Keep the original separately if you still need its capture date, camera settings or location history.</p></article>
+      <article class="card"><h2>C2PA and Content Credentials</h2><p>Some images can contain C2PA Content Credentials that describe provenance or editing history. This tool removes supported JPEG JUMBF, PNG caBX and WebP C2PA containers along with other selected metadata. Support does not cover every future or nonstandard credential layout, so the verification result reports only the supported blocks detected in the cleaned copy.</p></article>
     </section>
 
     <section class="card wide">
@@ -184,7 +189,7 @@
         <li><strong>JPEG / JPG:</strong> lossless removal of common EXIF, GPS, XMP, IPTC, comment and supported C2PA/JUMBF metadata segments.</li>
         <li><strong>PNG:</strong> lossless removal of EXIF and metadata text/time chunks while preserving image data and color profile chunks.</li>
         <li><strong>WebP:</strong> lossless removal of EXIF, XMP and supported C2PA chunks while preserving image, alpha and animation data.</li>
-        <li><strong>HEIC / HEIF:</strong> not cleaned in this version. The page rejects it clearly instead of returning an unchanged file as “clean.”</li>
+        <li><strong>HEIC / HEIF:</strong> not cleaned in this version. The page rejects it clearly instead of returning an unchanged file as “clean.” If needed, convert a copy to JPEG first, then clean and verify that converted copy here. Keep in mind that conversion changes the file container and may affect image data or metadata before this tool receives it.</li>
       </ul>
       <p>Removing photo metadata is not visual redaction. It does not blur faces, remove visible text or erase information shown inside the image itself. Keep the original until you have opened and checked the cleaned download.</p>
     </section>
@@ -201,7 +206,7 @@
     <footer>Clean photos locally · <a href="/">Remove PDF metadata</a> · <a href="/clear-pdf-metadata/">Verify a cleaned PDF</a> · <a href="/privacy.html">Privacy</a></footer>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.umd.js"></script>
+  <script src="/assets/exifr-7.1.3.umd.js"></script>
   <script src="/assets/image-metadata-tools.js"></script>
   <script>
     const state = { file: null, bytes: null, format: null, objectUrl: null };
